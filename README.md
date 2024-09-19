@@ -1,6 +1,12 @@
 # T-cadastro-api
 Com o objetivo de treinamento, este projeto deve criar uma api em JAVA 17 utilizando o spring boot como framework que fornece um crud do cadastro de clientes inserindo e alterando uma de dados noSQL dynamodb.
 
+## Instrucoes de execucao
+
+- Tenha certeza que as variaveis de ambiente estao setadas corretamente tanto para java21 e maven3.9.9
+- Abra um terminal, dentro da pasta DHT do projeto, execute os comandos na ordem:
+  - mvn clean protobuf:compile install
+  - mvn exec:java -Dexec.mainClass="com.ufabc.api.ApiApplication"
 
 # How to call?
 
