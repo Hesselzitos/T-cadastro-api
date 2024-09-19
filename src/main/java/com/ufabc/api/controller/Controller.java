@@ -15,11 +15,11 @@ public class Controller {
 
     // GET endpoint to retrieve data by ID
     @GetMapping("/data/{id}")
-    public ResponseEntity<Object> getDataById(@PathVariable String id, @RequestParam int port) {
+    public ResponseEntity<String> getDataById(@PathVariable String id, @RequestParam int port) {
         Item itemRequest = Item.newBuilder().setKeyItemHash(id).build();
         Item item = DhtClient.retrive(itemRequest, String.valueOf(port));
         if (item != null) {
-            return ResponseEntity.ok(item);
+            return ResponseEntity.ok(item.toString());
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Data not found");
         }
